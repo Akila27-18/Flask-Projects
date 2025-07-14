@@ -1,0 +1,8 @@
+Hi {{ name }},
+
+Thank you for purchasing {{ product }} on {{ date }}.
+
+We hope you're enjoying your new {{ product }}. If you have any questions, feel free to reach out.
+
+Best regards,  
+Customer Support Team  

@@ -1,0 +1,30 @@
+{
+    "name": "Akila Barath",
+    "email": "akila@example.com",
+    "phone": "+91-9876543210",
+    "address": "Delhi, India",
+    "summary": "Software developer with 3+ years of experience.",
+    "education": [
+      {
+        "degree": "B.Tech in Computer Science",
+        "institution": "ABC University",
+        "year": "2021"
+      }
+    ],
+    "experience": [
+      {
+        "title": "Python Developer",
+        "company": "TechCorp",
+        "duration": "2021 - Present"
+      }
+    ],
+    "skills": ["Python", "Flask", "SQLite", "Git"],
+    "projects": [
+      {
+        "name": "Budget Tracker",
+        "description": "A desktop app to manage income and expenses."
+      }
+    ],
+    "certifications": ["AWS Certified Developer", "Google Data Analyst"]
+  }
+  
