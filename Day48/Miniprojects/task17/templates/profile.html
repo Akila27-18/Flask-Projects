@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='images/profiles/' ~ image) }}" alt="{{ name }}" width="180" style="border-radius: 50%; box-shadow: 0 0 10px #ccc;">
+        <h2>{{ name }}</h2>
+        <p><em>Joined on {{ joined }}</em></p>
+        <p>{{ bio }}</p>
+
+        {% if is_new %}
+            <p style="color: green; font-weight: bold;">🎉 New member alert! Joined recently.</p>
+        {% endif %}
+    </div>
+{% endblock %}

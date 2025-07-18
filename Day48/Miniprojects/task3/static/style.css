@@ -1,0 +1,13 @@
+body {
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 10px;
+}
+
+.badge {
+    font-size: 1rem;
+    padding: 10px 15px;
+}

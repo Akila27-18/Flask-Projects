@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 class="error-code">500</h1>
+    <p class="error-message">Something went wrong on our end.</p>
+    <p>{{ error }}</p>
+    <a href="{{ url_for('home') }}" class="button">Try Again</a>
+{% endblock %}

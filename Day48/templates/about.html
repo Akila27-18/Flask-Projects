@@ -1,0 +1,22 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+</head>
+<body>
+    <h2>About Us</h2>
+    <p>This is about page</p>
+</body>
+</html> -->
+
+<!-- templates/about.html -->
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+  <h1>About Page</h1>
+  <img src="{{ url_for('static', filename='images/download.jpg') }}" alt="Logo" width="200">
+{% endblock %}

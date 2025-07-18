@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='faq.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>❓ Frequently Asked Questions</h1>
+        <hr>
+    </header>
+
+    {% block content %}{% endblock %}
+</body>
+</html>

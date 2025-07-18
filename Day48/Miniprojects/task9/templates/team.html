@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="team-container">
+    {% for member in team %}
+        <div class="card {% if member.role == 'Team Lead' %}lead{% endif %}">
+            <img src="{{ url_for('static', filename='images/' ~ member.photo) }}" alt="{{ member.name }}">
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.role }}</p>
+            {% if member.role == 'Team Lead' %}
+                <p><strong>⭐ Team Lead</strong></p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-body">
+        <h3 class="card-title">Student: {{ name }}</h3>
+        <hr>
+        <h5>Subject Marks:</h5>
+        <ul class="list-group mb-3">
+            {% for subject, mark in subjects.items() %}
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>{{ subject }}</span>
+                    <span>{{ mark }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+        <h4>Grade:
+            {% if grade == 'A' %}
+                <span class="badge bg-success">{{ grade }}</span>
+            {% elif grade == 'B' %}
+                <span class="badge bg-primary">{{ grade }}</span>
+            {% else %}
+                <span class="badge bg-warning text-dark">{{ grade }}</span>
+            {% endif %}
+        </h4>
+    </div>
+</div>
+{% endblock %}

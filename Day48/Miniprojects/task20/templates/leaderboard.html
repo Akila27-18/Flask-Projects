@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Leaderboard{% endblock %}
+
+{% block content %}
+<div class="leaderboard-container">
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in leaderboard %}
+            <tr class="{% if loop.first %}first-place{% endif %}">
+                <td>
+                    {% if loop.index == 1 %}
+                        <img src="{{ url_for('static', filename='images/gold.png') }}" alt="1st" class="badge">
+                    {% elif loop.index == 2 %}
+                        <img src="{{ url_for('static', filename='images/silver.png') }}" alt="2nd" class="badge">
+                    {% elif loop.index == 3 %}
+                        <img src="{{ url_for('static', filename='images/bronze.png') }}" alt="3rd" class="badge">
+                    {% else %}
+                        #{{ loop.index }}
+                    {% endif %}
+                </td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.score }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

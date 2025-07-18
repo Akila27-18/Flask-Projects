@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="product-grid">
+    {% for product in products %}
+        <div class="product-card">
+            <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+            <h2>{{ product.name }}</h2>
+            <p>${{ "%.2f"|format(product.price) }}</p>
+            {% if product.in_stock %}
+                <button class="buy-btn">Buy Now</button>
+            {% else %}
+                <p class="out-of-stock">Out of Stock</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

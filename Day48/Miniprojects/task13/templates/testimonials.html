@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row g-4">
+    {% for t in testimonials %}
+    <div class="col-md-4">
+        <div class="card testimonial-card">
+            <img src="{{ url_for('static', filename=t.photo) }}" class="card-img-top user-photo" alt="{{ t.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ t.name }}</h5>
+                <p class="card-text">"{{ t.comment }}"</p>
+                <div class="star-rating">
+                    {% for _ in range(t.rating) %}
+                        <img src="{{ url_for('static', filename='star.png') }}" alt="*" class="star-icon">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

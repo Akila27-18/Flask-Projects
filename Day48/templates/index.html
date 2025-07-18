@@ -1,0 +1,47 @@
+<!-- File: templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/about">About</a> |
+        <a href="/contact">Contact</a>
+    </nav>
+    <!-- templates/index.html -->
+    <h1>Welcome, {{ username }}!</h1>
+    
+    <!-- templates/index.html -->
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+  <h1 style="color: green;">Welcome to the Homepage</h1>
+{% endblock %}
+
+    <ul>
+        {% for score in scores %}
+            <li>{{ loop.index }}. {{ score }}</li>
+        {% endfor %}
+    </ul>
+
+    <ul>
+        {% for score in scores %}
+            <li>
+                {{ loop.index }}. {{ score }}
+                {% if score > 80 %}
+                    <strong style="color: green;">(High Score)</strong>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    <p>Hello, {{ name.capitalize() }}</p>
+    <p>{{ description[:50] }}...</p>
+
+
+    <h1>Welcome!</h1>
+    <p>This is the home page.</p>
+</body>
+</html>

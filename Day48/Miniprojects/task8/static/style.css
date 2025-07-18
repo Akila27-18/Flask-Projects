@@ -1,0 +1,24 @@
+body {
+    background-color: #f4f8fa;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.blog-card {
+    transition: transform 0.2s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.blog-card:hover {
+    transform: scale(1.02);
+}
+
+.blog-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.featured {
+    border: 2px solid #f0ad4e;
+    box-shadow: 0 0 10px rgba(240, 173, 78, 0.4);
+}

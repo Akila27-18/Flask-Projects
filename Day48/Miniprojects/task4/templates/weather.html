@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Weather for {{ date }}</h2>
+
+    <p>Temperature: {{ temperature }}°C</p>
+
+    {% if condition == 'sun' %}
+        <img src="{{ url_for('static', filename='images/book1.png') }}" alt="Sunny" width="100">
+    {% elif condition == 'rain' %}
+        <img src="{{ url_for('static', filename='images/book2.png') }}" alt="Rainy" width="100">
+    {% endif %}
+
+    {% if temperature > 30 %}
+        <p style="color:red;"><strong>Stay Hydrated!</strong></p>
+    {% endif %}
+
+    <canvas id="tempChart" width="400" height="200"></canvas>
+    {% raw %}
+    <script>
+        const hourlyTemps = {{ hourly_temps | tojson }};
+    </script>
+    {% endraw %}
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

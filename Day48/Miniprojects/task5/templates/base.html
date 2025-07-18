@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Board</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <h1>Job Listings</h1>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>&copy; 2025 Job Board Inc.</p>
+    </footer>
+</body>
+</html>

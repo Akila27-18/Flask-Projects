@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if books %}
+        <div class="grid">
+            {% for book in books %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/' ~ book.image) }}" alt="Cover of {{ book.name }}">
+                    <h3>{{ book.name }}</h3>
+                    <p>by {{ book.author }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p style="text-align:center;">No books available</p>
+    {% endif %}
+{% endblock %}

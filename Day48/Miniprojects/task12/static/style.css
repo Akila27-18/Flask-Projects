@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('/static/fonts/OpenSans-Regular.ttf');
+}
+
+body {
+    font-family: 'OpenSans', sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+}
+
+header, footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+nav {
+    background-color: #444;
+    padding: 0.5em;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+.container {
+    padding: 2em;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 1em;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.card h3 {
+    margin: 0.2em 0;
+}
+
+.warning-icon {
+    width: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

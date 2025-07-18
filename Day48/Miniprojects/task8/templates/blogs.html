@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row g-4">
+    {% for blog in blogs %}
+    <div class="col-md-6">
+        <div class="card blog-card {% if blog.featured %}featured{% endif %}">
+            <img src="{{ url_for('static', filename=blog.image) }}" class="card-img-top" alt="Blog Image">
+            <div class="card-body">
+                <h5 class="card-title">{{ blog.title }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">By {{ blog.author }}</h6>
+                <p class="card-text">{{ blog.snippet }}</p>
+                {% if blog.featured %}
+                    <span class="badge bg-warning text-dark">Featured</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

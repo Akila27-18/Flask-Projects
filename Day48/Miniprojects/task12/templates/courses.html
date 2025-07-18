@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="grid">
+        {% for course in courses %}
+            <div class="card">
+                {% if course.level == "advanced" %}
+                    <img src="{{ url_for('static', filename='icons/warning.png') }}" alt="Warning" class="warning-icon">
+                {% endif %}
+                <h3>{{ course.title }}</h3>
+                <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+                <p><strong>Duration:</strong> {{ course.duration }}</p>
+                <p><strong>Level:</strong> {{ course.level|capitalize }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

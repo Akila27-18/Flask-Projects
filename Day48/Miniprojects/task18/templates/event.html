@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="event-title">{{ event_name }}</h1>
+
+{% if event_started %}
+    <p class="started-msg">🎉 The event has started!</p>
+{% else %}
+    <div class="countdown">
+        <div><span id="days">00</span><label>Days</label></div>
+        <div><span id="hours">00</span><label>Hours</label></div>
+        <div><span id="minutes">00</span><label>Minutes</label></div>
+        <div><span id="seconds">00</span><label>Seconds</label></div>
+    </div>
+    <script>
+        startCountdown("{{ event_date }}");
+    </script>
+{% endif %}
+{% endblock %}
